@@ -37,7 +37,7 @@ function trocaFrase(data){
 	var indice = Math.round(Math.random() * qtdFrases);
 	var novaFrase = data[indice].texto;
 	var novoTempo = data[indice].tempo;
-	
+
 
 	frase.text(novaFrase);
 	span.text(" (Frase ID: " + indice + ")");
@@ -61,7 +61,9 @@ function atualizaTamanhoFrase(){
 
 function buscaFrase(){
 	var fraseId = $("#frase-id").val();
-	var dados = { id: fraseId};
+	var dados = {
+		id: fraseId
+	};
 
 	frase.hide();
 	erro.fadeOut();
@@ -83,13 +85,9 @@ function buscaFrase(){
 function trocaFraseSelecionada(data){
 	var novaFrase = data.texto;
 	var novoTempo = data.tempo;
-	
+
 	frase.text(novaFrase);
 	tempo.text(novoTempo);
 	qtdCaracteres.text(novaFrase.length);
 	tempoInicial = novoTempo;
-
-	reiniciaJogo();
-	atualizaTamanhoFrase();
-	inicializaCronometro();
 }

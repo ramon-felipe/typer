@@ -4,14 +4,14 @@ var tempoDigitacao = $("#tempo-digitacao");
 
 $(document).ready(function(){
 	fraseAleatoria();
-	
+
 	inicializaContadores();
 	inicializaMarcadores();
 	botaoReiniciar.on("click", reiniciaJogo);
 });
 
-function inicializaCronometro(){	
-	var tempoRestante = tempoInicial;	
+function inicializaCronometro(){
+	var tempoRestante = tempoInicial;
 
 	campo.one("keypress", function(){
 		var cronometroId = setInterval(function(){
@@ -32,7 +32,7 @@ function inicializaContadores(){
 		var conteudo = campo.val();
 		var qtdPalavras = conteudo.split(/\s+\w/).length;
 		var qtdCaracteres = conteudo.length;
-		
+
 		$("#contador-palavras").text(qtdPalavras);
 		$("#contador-caracteres").text(qtdCaracteres);
 	});

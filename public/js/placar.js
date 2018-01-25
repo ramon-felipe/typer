@@ -77,13 +77,28 @@ function sincronizaPlacar(){
 	var placar = [];
 	var linhas = corpoTabela.find("tr");
 
-	console.log(linhas);
-
 	linhas.each(function(){
-		console.log(this);
 		var usuario = $(this).find("td:nth-child(1)").text();
-		console.log("Usuário: "+usuario);
-	})
+		var palavras = $(this).find("td:nth-child(2)").text();
 
+		var score = {
+			usuario: usuario,
+			pontos: palavras
+		};
+
+		placar.push(score);
+	});
+
+	var dados = {
+		placar: placar
+	};
+
+	$.post("http://localhost:3000/placar", dados)
+	.fail(function(){
+		console.log("erro");
+	})
+	.done(function(){
+		console.log("sucesso");
+	});
 
 }

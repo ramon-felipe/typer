@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Typer</title>
+    <link rel="stylesheet" type="text/css" href="css/libs/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center">Typer</h1>
+
+        <div class="center">
+            <h4 class="frase"></h4>
+        </div>
+
+        <div class="center" id="loading">
+            <!--<img src="img/spinner.gif" alt="loading">-->
+            <div class="progress blue lighten-3">
+                <div class="indeterminate blue darken-2"></div>
+            </div>
+        </div>
+
+        <div id="erro" class="center">
+            <div class="chip red lighten-5">
+                    Ocorreu um erro, por favor tente novamente em alguns instantes.
+                <i class="close material-icons">close</i>
+            </div>
+        </div>
+
+        <div class="row">
+            <ul class="informacoes center">
+            	<li>                    
+                    <div class="col s6 right-align">
+                        <span id="tamanho-frase"></span> palavras
+                    </div>
+                    <div class="col s6 left-align">
+                        <i class="tiny material-icons icones">description</i>
+                    </div>
+                </li>
+                <li>                    
+                    <div class="col s6 right-align">
+                        <span id="quantidade-caracteres"></span> caracteres
+                    </div>
+                    <div class="col s6 left-align">
+                        <i class="tiny material-icons icones">spellcheck</i>
+                    </div>
+                </li>
+            	<li>                    
+                    <div class="col s6 right-align">
+                        <span id="tempo-digitacao"></span> segundos
+                    </div>
+                    <div class="col s6 left-align">
+                        <i class="tiny material-icons icones">query_builder</i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <textarea class="campo-digitacao" rows="8" cols="40"></textarea>
+
+        <div class="botoes flex">
+            <div>
+                <a class="disabled btn-floating btn-large waves-effect waves-light teal darken-1" id="botao-reiniciar" disabled><i class="material-icons">history</i></a>
+
+                <a class="btn-floating btn-medium waves-effect waves-light green" id="botao-placar"><i class="small material-icons">assignment</i></a>
+
+                <a class="btn-floating btn-medium waves-effect waves-light blue lighten-2" id="botao-frase"><i class="small material-icons">shuffle</i></a>
+
+                <a class="btn-floating btn-medium waves-effect waves-light deep-purple darken-1" id="botao-frase-id"><i class="small material-icons">repeat_one</i></a>
+                <input id="frase-id" type="number" name="" min="0" max="9" value="0">
+            </div>
+            <div>
+                <a class="btn-floating btn-tiny waves-effect waves-light yellow" id="botao-sync"><i class="material-icons">swap_vert</i></a>
+            </div>
+        </div>
+
+        <ul class="center">
+        	<li><span id="contador-caracteres">0</span> caracteres</li>
+        	<li><span id="contador-palavras">0</span> palavras</li>
+        </ul>
+
+        <section class="placar center">
+            <h3 class="center">Placar</h3>
+
+            <table class="centered bordered highlight">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nº de palavras</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        <div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/placar.js"></script>
+    <script src="js/frase.js"></script>
+</body>
+</html>

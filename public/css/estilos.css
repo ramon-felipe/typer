@@ -1,0 +1,84 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	padding-bottom: 2em;
+	overflow: scroll;
+}
+
+.campo{
+}
+	.campo-digitacao{
+		font-size: 1.5em;
+		height: 6em;
+		border: 3px solid black;
+	}
+
+	.campo-digitacao[disabled]{
+		color: #444444;
+		background-color: #e5e5e5;
+	}
+
+	.campo-correto{
+		border-color: green;
+	}
+
+	.campo-incorreto{
+		border-color: red;
+	}
+
+.frase{
+	font-size: 1.5em;
+}
+	.frase span{
+		font-size: .5em;
+		color: gray;
+	}
+
+.icones{
+	vertical-align: middle;
+}
+
+.row .col{
+	padding: 0 0.3rem;
+}
+
+.placar{
+	display: none;
+	background: linear-gradient(to top, lightgray, white);
+}
+
+#erro{
+	display: none;
+}
+	#erro div{
+		color: red;
+	}
+	#erro .close{
+		color: #000;
+	}
+
+#loading{
+	text-align: center;
+	display: none;
+}
+
+#frase-id{
+	width: 3em;
+}
+
+.progress{
+	width: 15em;
+	margin: 0 auto;
+}
+
+.flex{
+	display: flex;
+}
+
+.botoes.flex div:first-child{
+	flex-grow: 1;
+}
+.botoes.flex div:last-child{
+	flex-grow: 0;
+}

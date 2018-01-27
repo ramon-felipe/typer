@@ -102,3 +102,13 @@ function sincronizaPlacar(){
 	});
 
 }
+
+function atualizaPlacar(){
+	$.get("http://localhost:3000/placar",function(data){
+		$(data).each(function(){
+			var linha = adicionaLinha(this.usuario, this.pontos);
+			console.log(linha);
+			$("tbody").append(linha);
+		});
+	});
+}

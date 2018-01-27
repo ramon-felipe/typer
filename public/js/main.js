@@ -4,10 +4,10 @@ var tempoDigitacao = $("#tempo-digitacao");
 
 $(document).ready(function(){
 	fraseAleatoria();
-
 	inicializaContadores();
 	inicializaMarcadores();
 	botaoReiniciar.on("click", reiniciaJogo);
+	atualizaPlacar();
 });
 
 function inicializaCronometro(){

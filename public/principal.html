@@ -5,6 +5,10 @@
     <title>Typer</title>
     <link rel="stylesheet" type="text/css" href="css/libs/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/libs/selectize.default.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/libs/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/libs/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css" />
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
@@ -31,7 +35,7 @@
 
         <div class="row">
             <ul class="informacoes center">
-            	<li>                    
+            	<li>
                     <div class="col s6 right-align">
                         <span id="tamanho-frase"></span> palavras
                     </div>
@@ -39,7 +43,7 @@
                         <i class="tiny material-icons icones">description</i>
                     </div>
                 </li>
-                <li>                    
+                <li>
                     <div class="col s6 right-align">
                         <span id="quantidade-caracteres"></span> caracteres
                     </div>
@@ -47,7 +51,7 @@
                         <i class="tiny material-icons icones">spellcheck</i>
                     </div>
                 </li>
-            	<li>                    
+            	<li>
                     <div class="col s6 right-align">
                         <span id="tempo-digitacao"></span> segundos
                     </div>
@@ -71,8 +75,18 @@
                 <a class="btn-floating btn-medium waves-effect waves-light deep-purple darken-1" id="botao-frase-id"><i class="small material-icons">repeat_one</i></a>
                 <input id="frase-id" type="number" name="" min="0" max="9" value="0">
             </div>
+
+            <div class="select-usuarios">
+              <select id=usuarios placeholder="Select or input a name">
+                <option value="">Select or input a name</option>
+                <option value="Ramon">Ramon</option>
+                <option value="Bruno">Bruno</option>
+                <option value="Roger">Roger</option>
+              </select>
+            </div>
+
             <div>
-                <a class="btn-floating btn-tiny waves-effect waves-light yellow" id="botao-sync"><i class="material-icons">swap_vert</i></a>
+                <a class="btn-floating btn-tiny waves-effect waves-light yellow tooltip" id="botao-sync" title="Sincronizado com sucesso!"><i class="material-icons">swap_vert</i></a>
             </div>
         </div>
 
@@ -102,5 +116,7 @@
     <script src="js/main.js"></script>
     <script src="js/placar.js"></script>
     <script src="js/frase.js"></script>
+    <script src="js/selectize.js"></script>
+    <script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
 </body>
 </html>

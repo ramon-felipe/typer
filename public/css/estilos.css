@@ -72,13 +72,33 @@ body{
 	margin: 0 auto;
 }
 
+.botoes{
+			align-items: center;
+}
+
 .flex{
 	display: flex;
 }
 
 .botoes.flex div:first-child{
+	flex-grow: 0;
+}
+.botoes.flex div:nth-child(2){
 	flex-grow: 1;
 }
 .botoes.flex div:last-child{
 	flex-grow: 0;
+}
+
+.select-usuarios{
+	padding: 0 1em;
+}
+
+#usuarios{
+	display: block;
+}
+
+
+.selectize-input{
+	width: 35%;
 }

@@ -4,7 +4,7 @@ botaoSync.on("click", sincronizaPlacar);
 
 function inserePlacar(){
 	var numPalavras = $("#contador-palavras").text();
-	var usuario = "Ramon";
+	var usuario = $("#usuarios").val();
 
 	var linha = adicionaLinha(usuario, numPalavras);
 
@@ -96,9 +96,17 @@ function sincronizaPlacar(){
 	$.post("http://localhost:3000/placar", dados)
 	.fail(function(){
 		console.log("erro");
+		$('#botao-sync').tooltipster('open').tooltipster('content',"Falha");
 	})
 	.done(function(){
 		console.log("sucesso");
+		$('#botao-sync').tooltipster('open').tooltipster('content',"Sucesso");
+	})
+	.always(function(){
+		setTimeout(function(){
+			$('#botao-sync').tooltipster('close');
+		},2000)
+
 	});
 
 }
@@ -107,7 +115,6 @@ function atualizaPlacar(){
 	$.get("http://localhost:3000/placar",function(data){
 		$(data).each(function(){
 			var linha = adicionaLinha(this.usuario, this.pontos);
-			console.log(linha);
 			$("tbody").append(linha);
 		});
 	});

@@ -3,6 +3,18 @@ var botaoReiniciar = $("#botao-reiniciar");
 var tempoDigitacao = $("#tempo-digitacao");
 
 $(document).ready(function(){
+	$('#usuarios').selectize({
+    create: true,
+    sortField: 'text'
+	});
+	$('#botao-sync').tooltipster({
+		theme: 'tooltipster-light',
+		animation: 'swing',
+		delay: 100,
+		animationDuration: 500,
+		trigger: 'custom'
+	});
+
 	fraseAleatoria();
 	inicializaContadores();
 	inicializaMarcadores();
